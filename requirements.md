@@ -15,4 +15,7 @@ pytest  # For running tests
 flake8  # For code linting
 
 # Downloads
-fpdf # For PDF Downloads
+fpdf   # For PDF Downloads
+
+# Utility
+psutil   # For python utilites
