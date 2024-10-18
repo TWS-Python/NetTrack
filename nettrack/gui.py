@@ -4,7 +4,6 @@ from tkinter import ttk
 from nettrack.utils import get_network_stats, get_ip_address, get_interface_stats
 
 
-
 class NetTrackGUI:
     def __init__(self):
         """Initialize the Tkinter window."""
@@ -27,16 +26,18 @@ class NetTrackGUI:
             # Dark theme settings
             self.root.configure(bg="#2e2e2e")
             self.style = ttk.Style(self.root)
-            self.style.configure('TButton', font=('Helvetica', 12), padding=6, background='#444444', foreground='black')
+            self.style.configure('TButton', font=('Helvetica', 12), padding=6, background='#444444', foreground='black')  # Always black text
             self.style.configure('TLabel', font=('Helvetica', 12), background='#2e2e2e', foreground='white', padding=4)
+            self.style.configure('TFrame', background="#2e2e2e")
             self.stats_display_style = {"bg": "#1c1c1c", "fg": "#ffffff", "insertbackground": "white",
                                         "state": "disabled"}
         else:
             # Light theme settings
             self.root.configure(bg="#f0f0f0")
             self.style = ttk.Style(self.root)
-            self.style.configure('TButton', font=('Helvetica', 12), padding=6, background='#e0e0e0', foreground='black')
+            self.style.configure('TButton', font=('Helvetica', 12), padding=6, background='#e0e0e0', foreground='black')  # Always black text
             self.style.configure('TLabel', font=('Helvetica', 12), background='#f0f0f0', foreground='black', padding=4)
+            self.style.configure('TFrame', background="#f0f0f0")
             self.stats_display_style = {"bg": "#ffffff", "fg": "#000000", "insertbackground": "black",
                                         "state": "disabled"}
 
@@ -64,11 +65,11 @@ class NetTrackGUI:
         # Configure button frame grid
         button_frame.columnconfigure([0, 1], weight=1)
 
-        # Refresh button with consistent text color
+        # Refresh button with consistent text color (always black)
         self.refresh_button = ttk.Button(button_frame, text="Refresh Stats", command=self.update_stats)
         self.refresh_button.grid(row=0, column=0, padx=5, pady=5, sticky='ew')
 
-        # Quit button with consistent text color
+        # Quit button with consistent text color (always black)
         self.quit_button = ttk.Button(button_frame, text="Quit", command=self.root.quit)
         self.quit_button.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
 
@@ -76,7 +77,7 @@ class NetTrackGUI:
         self.status_label = ttk.Label(self.root, text="Status: Ready", anchor=tk.W)
         self.status_label.grid(row=3, column=0, sticky='ew', padx=10, pady=(0, 5))
 
-        # Dark Theme Toggle (Checkbox with label)
+        # Dark Theme Toggle (Checkbox with label, always black text)
         theme_frame = ttk.Frame(self.root)
         theme_frame.grid(row=4, column=0, pady=5, padx=10, sticky='e')
         self.theme_checkbox = ttk.Checkbutton(theme_frame, text="Dark Theme", variable=self.is_dark_mode,
