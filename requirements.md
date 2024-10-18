@@ -13,3 +13,6 @@ scapy  # For network packet manipulation and monitoring (if needed)
 # Testing
 pytest  # For running tests
 flake8  # For code linting
+
+# Downloads
+fpdf # For PDF Downloads

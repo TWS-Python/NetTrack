@@ -4,6 +4,7 @@ from tkinter import ttk
 from nettrack.utils import get_network_stats, get_ip_address, get_interface_stats
 
 
+
 class NetTrackGUI:
     def __init__(self):
         """Initialize the Tkinter window."""
